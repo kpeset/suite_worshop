@@ -1,0 +1,32 @@
+{
+  "name": "workshop-js-fullstack-jwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "setup": "npm i && npm --prefix ./front i && npm --prefix ./api i",
+    "migrate": "npm --prefix ./api run migrate",
+    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./front run dev\" \"npm --prefix ./api run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brian-boudrioux/workshop-js-fullstack-jwt.git"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "jwt",
+    "auth",
+    "fullstack"
+  ],
+  "author": "brianboudrioux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brian-boudrioux/workshop-js-fullstack-jwt/issues"
+  },
+  "homepage": "https://github.com/Brian-boudrioux/workshop-js-fullstack-jwt#readme",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1"
+  }
+}
