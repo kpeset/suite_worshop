@@ -173,6 +173,8 @@ For be able to secure our routes and redirect unauthenticated user without calli
   ``` 
   - 3.5 Use your `PrivateRoute` component into your app router for protecting the following routes : (home: "/", users: "/users")
 
+4. Update your Login component for set the state of your AuthProvider when the user logged successfully and test your routes
+
 ## 3 - Sky is the limit
 Now you have your login implemented in your front end and you have secured the routes your mission if you accept it is to : 
 
