@@ -1,5 +1,5 @@
 
-# Workshop jwt : Express/React
+# Workshop Express/React 1/3 : Authenticate JWT
 
 ### Install dependencies
 Install the dependencies project with the command:
