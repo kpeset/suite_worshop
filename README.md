@@ -43,11 +43,11 @@ The route must retrieve a json with the following structure from the request bod
 
 2. Create a findByMail method in your model 
 - 2.1 If an error occurs during the execution of the SQL query, return an error 500 with the corresponding error message. 
-- 2.2 If the result returned is empty, return a 403 'Invalid email' error.
+- 2.2 If the result returned is empty, return a 400 'Invalid email' error.
 
 3. If the result is not empty, you will now verify the password using the `verify` method of the _argon2_ module. You can find an example here: [https://github.com/ranisalt/node-argon2#node-argon2](https://github.com/ranisalt/node-argon2#node-argon2).
 
-4. If the password do not match returns a 403 error with the message 'Invalid password'.
+4. If the password do not match returns a 400 error with the message 'Invalid password'.
 
 5. If the password is valid generate a jsonwebtoken, you will use the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) module to perform the key generation: :
   - install the module
@@ -131,7 +131,7 @@ export default api;
 
 4. In the `Login.jsx` component, import and call your authService login method into the `useEffect` hook
 
-5. If the method return a error status (400, 403) define a error state and show the error into your render
+5. If the method return a error status (400, 401, 403) define a error state and show the error into your render
 
 6. If you receive a success status (200) redirect to the home page "/" with the useNavigate hook
 
