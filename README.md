@@ -165,7 +165,9 @@ For be able to secure our routes and redirect unauthenticated user without calli
   - 3.2 Import `AuthContext` and get his state using `useContext` hook :
   `const { state } = useContext(AuthContext);`
   - 3.3 If `state.isAuth` is false return a `Navigate` component for redirect to the login page :
-  `if (!state.isAuth) return <Navigate to="/login" />`
+  ```js
+  if (!state.isAuth) return <Navigate to="/login" />
+  ```
   - 3.4 If `state.isAuth` is true return the children props :
   ```js
   else
