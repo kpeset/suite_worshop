@@ -159,17 +159,17 @@ For be able to secure our routes and redirect unauthenticated user without calli
   }
  ```
 
-3. In your App.jsx (or Router.jsx) add a PrivateRoute component following this tutorial : https://binhtran04.medium.com/private-route-public-route-and-restricted-route-with-react-router-d50b27c15f5e
+3. In your App.jsx (or Router.jsx) add a PrivateRoute component following this tutorial : https://www.robinwieruch.de/react-router-private-routes/
   - 3.1 Declare a `PrivateRoute` component with the following props : 
-  `({Component: component, ...rest})`
+  `({children, role = "ROLE_USER"})`
   - 3.2 Import `AuthContext` and get his state using `useContext` hook :
   `const { state } = useContext(AuthContext);`
-  - 3.3 If `state.isAuth` is false return a `Redirect` component for redirect to the login page :
-  `if (!state.isAuth) return <Redirect to="/login" />`
-  - 3.4 If `state.isAuth` is true return a Route component following this example :
+  - 3.3 If `state.isAuth` is false return a `Navigate` component for redirect to the login page :
+  `if (!state.isAuth) return <Navigate to="/login" />`
+  - 3.4 If `state.isAuth` is true return the children props :
   ```js
   else
-    return <Route {...rest} render={props => <Component {...props} /> } />
+    return children
   ``` 
   - 3.5 Use your `PrivateRoute` component into your app router for protecting the following routes : (home: "/", users: "/users")
 
